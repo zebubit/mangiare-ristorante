@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardápio · Mangiare Ristorante Italiano · Chef Sérgio Souza · Uberaba</title>
+<meta name="description" content="Cardápio completo do Mangiare Ristorante Italiano em Uberaba: entradas, risotos, massas artesanais, peixes, bacalhau, carnes, cordeiro e sobremesas. Peça pelo site.">
+<meta property="og:title" content="Cardápio · Mangiare Ristorante Italiano">
+<meta property="og:description" content="Entradas, risotos, massas, peixes, bacalhau, carnes e cordeiro. Alta gastronomia italiana em Uberaba.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<link rel="canonical" href="https://mangiareristorante.com.br/cardapio.html">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<meta name="theme-color" content="#0a0805">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:image" content="https://mangiareristorante.com.br/COMIDA.webp">
+<meta property="og:url" content="https://mangiareristorante.com.br/cardapio.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mangiareristorante.com.br/COMIDA.webp">
+
+<!-- Cardapio estruturado: permite ao Google entender pratos, secoes e precos. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Cardápio Mangiare Ristorante Italiano",
+  "url": "https://mangiareristorante.com.br/cardapio.html",
+  "inLanguage": "pt-BR",
+  "offers": { "@type": "Offer", "priceCurrency": "BRL", "lowPrice": "9", "highPrice": "189" },
+  "isPartOf": {
+    "@type": "Restaurant",
+    "name": "Mangiare Ristorante Italiano",
+    "url": "https://mangiareristorante.com.br/",
+    "telephone": "+553433135137",
+    "servesCuisine": "Italiana",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Santos Dumont, 932",
+      "addressLocality": "Uberaba",
+      "addressRegion": "MG",
+      "addressCountry": "BR"
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="cardapio-topo">
+  <a href="index.html" class="voltar">← Voltar ao site</a>
+  <div class="section-eyebrow" style="justify-content:center"><span>Il Nostro Menù</span></div>
+  <h1 class="section-title">Cardápio do <em>Mangiare Ristorante</em></h1>
+  <div class="section-ornament"><div class="ornament-diamond"></div></div>
+  <p style="color:rgba(212,196,168,.45);font-size:.85rem;letter-spacing:.05em;">Ingredientes selecionados · Receitas tradicionais · Preparação artesanal</p>
+  <div class="cardapio-acoes">
+    <a href="cardapio-oficial.pdf" target="_blank" rel="noopener" class="btn-cardapio-completo">Baixar em PDF</a>
+    <a href="https://wa.me/5534999473287?text=Ol%C3%A1!%20Quero%20fazer%20uma%20reserva%20no%20Mangiare%20%F0%9F%8D%B7" target="_blank" rel="noopener" class="btn-cardapio-completo">Reservar mesa</a>
+  </div>
+</header>
+
+<section class="menu-section" style="padding-top:2.4rem;padding-bottom:7rem;">
+  <div class="cat-tabs" id="catTabs"></div>
+  <div class="menu-grid" id="menuGrid"></div>
+  <p class="menu-rodape">Cardápio oficial da casa. Valores sujeitos a alteração sem aviso prévio.<br>
+     <span class="menu-so-salao-legenda">Salão</span> indica pratos servidos somente no restaurante.</p>
+</section>
+
+<!-- SACOLA -->
+<div class="sacola-bar" id="sacolaBar" hidden>
+  <div class="sacola-bar-info"><strong id="sacolaQtd">0 itens</strong><span id="sacolaTotal">R$ 0,00</span></div>
+  <button type="button" class="sacola-bar-btn" id="btnVerSacola">Ver sacola</button>
+</div>
+
+<div class="sacola-ov" id="sacolaOv"></div>
+
+<aside class="sacola-sheet" id="sacolaSheet" aria-label="Sua sacola">
+  <div class="sacola-head">
+    <span>Sua sacola</span>
+    <button type="button" class="sacola-fechar" id="btnFechar" aria-label="Fechar">✕</button>
+  </div>
+
+  <div class="sacola-corpo">
+    <div id="sacolaItens"></div>
+
+    <div class="sacola-vazia" id="sacolaVazia">Sua sacola está vazia.</div>
+
+    <div id="sacolaCheckout" hidden>
+      <div class="sacola-tipo">
+        <button type="button" class="tipo-op on" id="opEntrega">🛵 Entrega</button>
+        <button type="button" class="tipo-op" id="opRetirada">🏠 Retirada</button>
+      </div>
+
+      <label class="sacola-lbl">Seu nome
+        <input type="text" id="fNome" placeholder="Como devemos chamar você?" autocomplete="name">
+      </label>
+
+      <label class="sacola-lbl">WhatsApp
+        <input type="tel" id="fTel" placeholder="(34) 90000-0000" autocomplete="tel">
+      </label>
+
+      <div id="camposEntrega">
+        <label class="sacola-lbl">Bairro
+          <select id="fBairro"></select>
+        </label>
+        <label class="sacola-lbl">Endereço
+          <input type="text" id="fEndereco" placeholder="Rua, número, complemento" autocomplete="street-address">
+        </label>
+      </div>
+
+      <label class="sacola-lbl">Observações
+        <textarea id="fObs" rows="2" placeholder="Ponto da carne, alergias, sem cebola..."></textarea>
+      </label>
+
+      <div class="sacola-resumo">
+        <div><span>Subtotal</span><span id="rSub">R$ 0,00</span></div>
+        <div id="linhaTaxa"><span>Taxa de entrega</span><span id="rTaxa">R$ 0,00</span></div>
+        <div class="sacola-resumo-total"><span>Total</span><span id="rTotal">R$ 0,00</span></div>
+      </div>
+
+      <button type="button" class="sacola-enviar" id="btnEnviar">Enviar pedido pelo WhatsApp</button>
+      <p class="sacola-obs">O pedido vai completo pro WhatsApp do restaurante, que confirma o horário e a forma de pagamento.</p>
+    </div>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script src="cardapio-dados.js"></script>
+<script>
+// Cardapio + sacola. Os dados vem de cardapio-dados.js (mesma fonte do site, da bio e do delivery).
+(function(){
+  var D = window.MANGIARE_CARDAPIO;
+  var tabs = document.getElementById('catTabs'), grid = document.getElementById('menuGrid');
+  if(!D || !tabs || !grid) return;
+
+  var WA = '5534999473287';
+  // Mesmas taxas usadas na demo de delivery.
+  var BAIRROS = [
+    {n:'São Benedito',taxa:5},{n:'Centro',taxa:7},{n:'Fabrício',taxa:8},
+    {n:'Abadia',taxa:9},{n:'Santa Marta',taxa:12},{n:'Lourdes',taxa:14},
+    {n:'Jardim Uberaba',taxa:16},{n:'Outro bairro',taxa:18}
+  ];
+
+  function slug(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function fmt(v){return 'R$ ' + v.toFixed(2).replace('.',',');}
+
+  // ---- indexa os itens ----
+  var ITENS = {};
+  D.categorias.forEach(function(c){
+    c.itens.forEach(function(it, i){
+      var id = slug(it.n) || ('item-'+i);
+      while(ITENS[id]) id += '-' + i;
+      it.id = id; it.cat = c.cat; ITENS[id] = it;
+    });
+  });
+
+  // ---- monta abas e cardapio ----
+  var t = '<button class="cat-tab active" data-cat="todos">Todos</button>';
+  D.categorias.forEach(function(c){ t += '<button class="cat-tab" data-cat="'+slug(c.cat)+'">'+esc(c.cat)+'</button>'; });
+  tabs.innerHTML = t;
+
+  var g = '';
+  D.categorias.forEach(function(c){
+    var sc = slug(c.cat);
+    var legenda = c.nota || (c.soNoSalao ? c.motivo : '');
+    g += '<div class="menu-card menu-cat-banner" data-cat="'+sc+'">'
+       +   '<div class="menu-cat-banner-in"><span class="menu-cat-nome">'+esc(c.cat)+'</span>'
+       +   (legenda ? '<span class="menu-cat-nota">'+esc(legenda)+'</span>' : '')
+       +   '</div></div>';
+    c.itens.forEach(function(it){
+      var podePedir = (it.entrega !== false) && (it.p !== null);
+      var preco = (it.p === null) ? '<span class="menu-card-price consultar">Consultar</span>'
+                                  : '<span class="menu-card-price">'+fmt(it.p)+'</span>';
+      g += '<div class="menu-card" data-cat="'+sc+'">'
+         +   '<div class="menu-card-tag">'+esc(c.cat)+(it.badge ? ' · '+esc(it.badge) : '')+'</div>'
+         +   '<div class="menu-card-name">'+esc(it.n)
+         +     (it.entrega === false ? '<span class="menu-so-salao" title="Servido somente no restaurante">Salão</span>' : '')
+         +   '</div>'
+         +   '<div class="menu-card-desc">'+esc(it.d||'')+'</div>'
+         +   '<div class="menu-card-footer">'+preco
+         +     (podePedir
+                 ? '<button type="button" class="btn-add" data-id="'+it.id+'">+ Adicionar</button>'
+                 : '<span class="so-salao-nota">Somente no salão</span>')
+         +   '</div>'
+         + '</div>';
+    });
+  });
+  grid.innerHTML = g;
+
+  // ---- filtro por categoria ----
+  tabs.addEventListener('click', function(e){
+    var btn = e.target.closest('.cat-tab');
+    if(!btn) return;
+    tabs.querySelectorAll('.cat-tab').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var cat = btn.dataset.cat;
+    grid.querySelectorAll('.menu-card').forEach(function(card){
+      card.classList.toggle('hidden', !(cat === 'todos' || card.dataset.cat === cat));
+    });
+    window.scrollTo({top: tabs.offsetTop - 20, behavior:'smooth'});
+  });
+
+  // ---- sacola ----
+  var cart = {};
+  var tipoEntrega = 'entrega';
+  var bar = document.getElementById('sacolaBar'), sheet = document.getElementById('sacolaSheet'),
+      ov = document.getElementById('sacolaOv'), lista = document.getElementById('sacolaItens'),
+      vazia = document.getElementById('sacolaVazia'), checkout = document.getElementById('sacolaCheckout'),
+      selBairro = document.getElementById('fBairro'), camposEntrega = document.getElementById('camposEntrega');
+
+  BAIRROS.forEach(function(b){
+    var o = document.createElement('option');
+    o.value = b.n; o.textContent = b.n + ' · ' + fmt(b.taxa);
+    selBairro.appendChild(o);
+  });
+
+  function qtdTotal(){ return Object.values(cart).reduce(function(a,b){return a+b;}, 0); }
+  function subtotal(){ return Object.keys(cart).reduce(function(a,id){ return a + ITENS[id].p * cart[id]; }, 0); }
+  function taxa(){
+    if(tipoEntrega !== 'entrega' || !qtdTotal()) return 0;
+    var b = BAIRROS.find(function(x){ return x.n === selBairro.value; });
+    return b ? b.taxa : 0;
+  }
+  function total(){ return subtotal() + taxa(); }
+
+  function mudar(id, delta){
+    var q = (cart[id] || 0) + delta;
+    if(q <= 0) delete cart[id]; else cart[id] = q;
+    if(delta > 0 && cart[id] === 1) toast(ITENS[id].n + ' adicionado');
+    render();
+  }
+
+  function render(){
+    var n = qtdTotal();
+    bar.hidden = (n === 0);
+    document.getElementById('sacolaQtd').textContent = n + (n === 1 ? ' item' : ' itens');
+    document.getElementById('sacolaTotal').textContent = fmt(total());
+
+    vazia.hidden = (n > 0);
+    checkout.hidden = (n === 0);
+
+    lista.innerHTML = Object.keys(cart).map(function(id){
+      var it = ITENS[id], q = cart[id];
+      return '<div class="sacola-item">'
+        + '<div class="sacola-item-nome">'+esc(it.n)+'<span>'+fmt(it.p)+' cada</span></div>'
+        + '<div class="sacola-step">'
+        +   '<button type="button" data-menos="'+id+'" aria-label="Tirar um">−</button>'
+        +   '<span>'+q+'</span>'
+        +   '<button type="button" data-mais="'+id+'" aria-label="Adicionar um">+</button>'
+        + '</div>'
+        + '<div class="sacola-item-sub">'+fmt(it.p * q)+'</div>'
+        + '</div>';
+    }).join('');
+
+    document.getElementById('rSub').textContent = fmt(subtotal());
+    document.getElementById('rTaxa').textContent = fmt(taxa());
+    document.getElementById('rTotal').textContent = fmt(total());
+    document.getElementById('linhaTaxa').style.display = (tipoEntrega === 'entrega') ? 'flex' : 'none';
+  }
+
+  grid.addEventListener('click', function(e){
+    var b = e.target.closest('.btn-add');
+    if(b) mudar(b.dataset.id, 1);
+  });
+  lista.addEventListener('click', function(e){
+    var m = e.target.closest('[data-mais]'), s = e.target.closest('[data-menos]');
+    if(m) mudar(m.dataset.mais, 1);
+    if(s) mudar(s.dataset.menos, -1);
+  });
+
+  function abrir(){ sheet.classList.add('open'); ov.classList.add('open'); document.body.style.overflow='hidden'; }
+  function fechar(){ sheet.classList.remove('open'); ov.classList.remove('open'); document.body.style.overflow=''; }
+  document.getElementById('btnVerSacola').addEventListener('click', abrir);
+  document.getElementById('btnFechar').addEventListener('click', fechar);
+  ov.addEventListener('click', fechar);
+
+  function setTipo(tipo){
+    tipoEntrega = tipo;
+    document.getElementById('opEntrega').classList.toggle('on', tipo === 'entrega');
+    document.getElementById('opRetirada').classList.toggle('on', tipo === 'retirada');
+    camposEntrega.style.display = (tipo === 'entrega') ? 'block' : 'none';
+    render();
+  }
+  document.getElementById('opEntrega').addEventListener('click', function(){ setTipo('entrega'); });
+  document.getElementById('opRetirada').addEventListener('click', function(){ setTipo('retirada'); });
+  selBairro.addEventListener('change', render);
+
+  var toastT;
+  function toast(msg){
+    var el = document.getElementById('toast');
+    el.textContent = msg; el.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(function(){ el.classList.remove('show'); }, 1800);
+  }
+
+  document.getElementById('btnEnviar').addEventListener('click', function(){
+    if(!qtdTotal()) return;
+    var nome = document.getElementById('fNome').value.trim();
+    var tel = document.getElementById('fTel').value.trim();
+    if(!nome){ toast('Falta o seu nome'); document.getElementById('fNome').focus(); return; }
+    if(!tel){ toast('Falta o seu WhatsApp'); document.getElementById('fTel').focus(); return; }
+    var endereco = document.getElementById('fEndereco').value.trim();
+    if(tipoEntrega === 'entrega' && !endereco){ toast('Falta o endereço'); document.getElementById('fEndereco').focus(); return; }
+
+    var linhas = Object.keys(cart).map(function(id){
+      var it = ITENS[id];
+      return '• ' + cart[id] + 'x ' + it.n + ' — ' + fmt(it.p * cart[id]);
+    }).join('\n');
+
+    var obs = document.getElementById('fObs').value.trim();
+    var msg = '🍝 *Novo Pedido | Mangiare Ristorante*\n\n'
+      + '👤 ' + nome + '\n📱 ' + tel + '\n\n'
+      + '*Itens*\n' + linhas + '\n\n'
+      + 'Subtotal: ' + fmt(subtotal()) + '\n'
+      + (tipoEntrega === 'entrega'
+          ? '🛵 Entrega · ' + selBairro.value + '\n📍 ' + endereco + '\nTaxa: ' + fmt(taxa()) + '\n'
+          : '🏠 Retirada no restaurante\n')
+      + '*Total: ' + fmt(total()) + '*\n'
+      + (obs ? '\n📝 ' + obs + '\n' : '')
+      + '\n_Pedido feito pelo site mangiareristorante.com.br_';
+
+    // Quando o Pix entrar, e aqui que o pedido passa a ir pro backend antes do WhatsApp.
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  });
+
+  setTipo('entrega');
+  render();
+})();
+</script>
+
+</body>
+</html>

@@ -1,9 +1,14 @@
+# arquivos do macOS
+.DS_Store
+**/.DS_Store
+
+# copias de seguranca das minhas edicoes
+*.bak-*
+
+# versoes antigas e rascunhos: nao podem ir pro ar
+# (Google indexaria /teste/ como conteudo duplicado do site)
 teste/
-*.zip
-*.pdf
-COMIDA.webp
-EXECUTIVO.webp
-PRATO .webp
-SABADO.webp
-SABOREAR.webp
-TERCA.webp
+
+# material interno de trabalho
+FOTOS-PARA-O-GOOGLE/
+STATUS-29-07.md
