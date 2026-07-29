@@ -764,7 +764,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 }
 
 /* ---- CHAMADA DE AVALIACAO NO GOOGLE ---- */
-.avalie-sec{padding:4.5rem 5% 4rem;background:var(--nero-warm);border-top:1px solid var(--bordo);}
+.avalie-sec{padding:3.5rem 0 0;background:transparent;border-top:none;}
 .avalie-box{max-width:640px;margin:0 auto;text-align:center;}
 .avalie-estrelas{color:var(--oro-chiaro);font-size:1.5rem;letter-spacing:.35em;margin-bottom:1rem;}
 .avalie-titulo{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--avorio);font-weight:400;margin-bottom:.7rem;}
@@ -774,3 +774,8 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .avalie-link{display:block;margin-top:1.3rem;color:rgba(212,196,168,.5);font-size:.78rem;letter-spacing:.05em;text-decoration:none;}
 .avalie-link:hover{color:var(--oro-chiaro);}
 @media(max-width:900px){ .avalie-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;} .avalie-link{min-height:44px;display:flex;align-items:center;justify-content:center;} }
+
+/* ---- Chamada para a pagina de pedido ---- */
+.btn-pedir{display:inline-block;background:var(--oro);color:var(--nero);padding:1rem 2.4rem;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background .3s;}
+.btn-pedir:hover{background:var(--oro-chiaro);}
+@media(max-width:900px){ .btn-pedir{min-height:44px;display:inline-flex;align-items:center;justify-content:center;} }
