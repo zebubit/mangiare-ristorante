@@ -1,14 +1,16 @@
-# arquivos do macOS
+# macOS
 .DS_Store
 **/.DS_Store
 
-# copias de seguranca das minhas edicoes
+# copias de seguranca das edicoes
 *.bak-*
 
-# versoes antigas e rascunhos: nao podem ir pro ar
-# (Google indexaria /teste/ como conteudo duplicado do site)
+# versoes antigas e rascunhos (Google indexaria como conteudo duplicado)
 teste/
 
-# material interno de trabalho
+# videos originais em 2,5K, guardados so localmente
+_videos-originais/
+
+# material interno de trabalho, nao faz parte do site
 FOTOS-PARA-O-GOOGLE/
 STATUS-29-07.md
