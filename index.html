@@ -81,6 +81,20 @@
   <a href="#reserva">Reservar Mesa →</a>
 </div>
 <div id="vinho-cursor" aria-hidden="true">🍷</div>
+<!-- ICONES DO SITE (sprite: define uma vez, usa com <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-vinho" viewBox="0 0 24 24"><path d="M7.5 3h9l-.7 5.6A3.9 3.9 0 0 1 12 12a3.9 3.9 0 0 1-3.8-3.4L7.5 3Z"/><path d="M12 12v8"/><path d="M8.5 20.5h7"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9L12 3Z"/></symbol>
+  <symbol id="i-talher" viewBox="0 0 24 24"><path d="M4 2v6a2.5 2.5 0 0 0 5 0V2"/><path d="M6.5 10.5V22"/><path d="M20 2c-2 1-3.2 3-3.2 5.4 0 1.7.9 2.9 2.2 3.1V22"/></symbol>
+  <symbol id="i-galeria" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.7" cy="8.7" r="1.8"/><path d="m21 15.5-3.4-3.4a2 2 0 0 0-2.8 0L5.5 21"/></symbol>
+  <symbol id="i-local" viewBox="0 0 24 24"><path d="M20 10.4c0 5.8-8 11.6-8 11.6s-8-5.8-8-11.6a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10.2" r="2.9"/></symbol>
+  <symbol id="i-mapa" viewBox="0 0 24 24"><path d="m3 6.4 6-3 6 3 6-3v14.2l-6 3-6-3-6 3V6.4Z"/><path d="M9 3.4v14.2"/><path d="M15 6.4v14.2"/></symbol>
+  <symbol id="i-telefone" viewBox="0 0 24 24"><path d="M21.5 17v2.6a1.9 1.9 0 0 1-2.1 1.9 18.9 18.9 0 0 1-8.2-2.9 18.6 18.6 0 0 1-5.7-5.7A18.9 18.9 0 0 1 2.6 4.6 1.9 1.9 0 0 1 4.5 2.5H7a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.7a1.9 1.9 0 0 1-.4 2L8 9.9a15.3 15.3 0 0 0 5.7 5.7l1.1-1.2a1.9 1.9 0 0 1 2-.4c.9.3 1.8.6 2.7.7a1.9 1.9 0 0 1 1.6 1.9Z"/></symbol>
+  <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="5.8" cy="17.4" r="3"/><circle cx="18.2" cy="17.4" r="3"/><path d="M8.8 17.4h6.4"/><path d="M5.8 14.4 8 9.6h4"/><path d="M12 9.6h3.4"/><path d="M14.6 6.2h3.1"/><path d="m15.4 6.2 2.8 11.2"/><path d="M8 9.6 6.6 6.4h2.6"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3.2" y="5" width="17.6" height="16" rx="2"/><path d="M3.2 10h17.6"/><path d="M8 3v4"/><path d="M16 3v4"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M12 6.4V12l3.6 2.1"/></symbol>
+</defs></svg>
+
 <div id="toast" role="status" aria-live="polite"></div>
 <a href="#" id="back-top" title="Voltar ao topo" aria-label="Voltar ao topo">↑</a>
 <div class="float-stack">
@@ -132,16 +146,16 @@
     <div class="hero-divider"></div>
     <p class="hero-desc">Um pedacinho da Itália em Uberaba. 42 anos de profissão, paixão pela gastronomia e sabores inesquecíveis em cada prato.</p>
     <div class="hero-badges">
-      <span class="hero-badge">⭐ 4,5 · 281 av. Google</span>
-      <span class="hero-badge">🍝 iFood 4,8 · 574 votos</span>
-      <span class="hero-badge">🍷 Vinhos Selecionados</span>
+      <span class="hero-badge"><svg class="ico ico-preenchido" aria-hidden="true"><use href="#i-estrela"></use></svg> 4,5 · 281 av. Google</span>
+      <span class="hero-badge"><svg class="ico" aria-hidden="true"><use href="#i-talher"></use></svg> iFood 4,8 · 574 votos</span>
+      <span class="hero-badge"><svg class="ico" aria-hidden="true"><use href="#i-vinho"></use></svg> Vinhos Selecionados</span>
     </div>
     <div class="hero-btns">
       <a href="#reserva" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Reservar pelo WhatsApp
       </a>
-      <a href="#galeria" class="btn-ghost">🍝 Ver Galeria</a>
+      <a href="#galeria" class="btn-ghost"><svg class="ico" aria-hidden="true"><use href="#i-galeria"></use></svg> Ver Galeria</a>
     </div>
   </div>
   <div class="hero-right">
@@ -244,7 +258,7 @@
         <div class="stat-box"><div class="stat-num" data-count="13.6" data-sfloat="1" data-suffix="k">13,6k</div><div class="stat-label">Seguidores Instagram</div></div>
       </div>
       <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-        <a href="#reserva" class="btn-primary">🍷 Reservar Mesa</a>
+        <a href="#reserva" class="btn-primary"><svg class="ico" aria-hidden="true"><use href="#i-vinho"></use></svg> Reservar Mesa</a>
         <a href="cardapio.html" class="btn-ghost">Ver Cardápio</a>
       </div>
     </div>
@@ -310,7 +324,7 @@
       <div class="promo-card rev-r">
          <img loading="lazy" class="promo-card-img" src="CAMARAO1.webp" alt="Cartaz da Quarta do Camarão: Festival de Camarões do Chef, menu completo por 139 reais por pessoa, toda quarta, com entrada, prato principal à escolha e sobremesa de cortesia">
         <div class="promo-card-body">
-          <div class="promo-card-dia">🗓️ Toda Quarta-Feira</div>
+          <div class="promo-card-dia"><svg class="ico" aria-hidden="true"><use href="#i-calendario"></use></svg> Toda Quarta-Feira</div>
           <div class="promo-card-title">Festival de Camarões do Chef</div>
           <div class="promo-card-price">R$ 139,00 <span style="font-size:.7rem;font-family:'Jost',sans-serif;color:rgba(212,196,168,.4);font-weight:300;">/ pessoa</span></div>
           <ul class="promo-card-list">
@@ -326,14 +340,14 @@
             <li><strong>Sobremesa (cortesia)</strong></li>
             <li>Petit gâteau com sorvete e calda de chocolate</li>
           </ul>
-          <a href="#reserva" class="btn-primary" style="width:100%;justify-content:center;">🦐 Reservar Agora</a>
+          <a href="#reserva" class="btn-primary" style="width:100%;justify-content:center;"><svg class="ico" aria-hidden="true"><use href="#i-vinho"></use></svg> Reservar Agora</a>
         </div>
       </div>
       <!-- COMBO CASAL -->
       <div class="promo-card rev-l">
         <img loading="lazy" class="promo-card-img" src="CASAL.webp" alt="Cartaz do Combo Casal, toda quinta-feira por 249 reais: duas taças de vinho tinto, entrada, prato principal à escolha e creme brûlée de sobremesa">
         <div class="promo-card-body">
-          <div class="promo-card-dia">🗓️ Toda Quinta-Feira</div>
+          <div class="promo-card-dia"><svg class="ico" aria-hidden="true"><use href="#i-calendario"></use></svg> Toda Quinta-Feira</div>
           <div class="promo-card-title">Combo Casal</div>
           <div class="promo-card-price">R$ 249,00</div>
           <ul class="promo-card-list">
@@ -350,7 +364,7 @@
             <li><strong>Sobremesa</strong></li>
             <li>Creme brûlée</li>
           </ul>
-          <a href="#reserva" class="btn-primary" style="width:100%;justify-content:center;">🍷 Reservar Agora</a>
+          <a href="#reserva" class="btn-primary" style="width:100%;justify-content:center;"><svg class="ico" aria-hidden="true"><use href="#i-vinho"></use></svg> Reservar Agora</a>
         </div>
       </div>
     </div>
@@ -456,15 +470,15 @@
 <section id="contato" style="background:var(--nero-warm);">
   <div class="info-section">
     <div class="info-block rev-l">
-      <h3>📍 Encontre-nos</h3>
-      <div class="info-row"><div class="info-icon">🗺️</div><div><div class="info-label">Endereço</div><div class="info-value">Av. Santos Dumont, 932, São Benedito<br>Uberaba, MG · CEP 38050-590</div></div></div>
-      <div class="info-row"><div class="info-icon">📞</div><div><div class="info-label">Telefone</div><div class="info-value"><a href="tel:3433135137">(34) 3313-5137</a></div></div></div>
+      <h3><svg class="ico ico-titulo" aria-hidden="true"><use href="#i-local"></use></svg> Encontre-nos</h3>
+      <div class="info-row"><div class="info-icon"><svg class="ico" aria-hidden="true"><use href="#i-mapa"></use></svg></div><div><div class="info-label">Endereço</div><div class="info-value">Av. Santos Dumont, 932, São Benedito<br>Uberaba, MG · CEP 38050-590</div></div></div>
+      <div class="info-row"><div class="info-icon"><svg class="ico" aria-hidden="true"><use href="#i-telefone"></use></svg></div><div><div class="info-label">Telefone</div><div class="info-value"><a href="tel:3433135137">(34) 3313-5137</a></div></div></div>
       <div class="info-row"><div class="info-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div><div class="info-label">WhatsApp · Reservas</div><div class="info-value"><a href="https://wa.me/5534999473287" target="_blank">(34) 99947-3287</a></div></div></div>
       <div class="info-row"><div class="info-icon" style="color:var(--oro);display:flex;align-items:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div><div><div class="info-label">Instagram</div><div class="info-value"><a href="https://instagram.com/mangiareristorante" target="_blank">@mangiareristorante</a> · 13,6k seguidores</div></div></div>
-      <div class="info-row"><div class="info-icon">🛵</div><div><div class="info-label">Delivery</div><div class="info-value">Disponível no iFood · Nota 4,8/574 votos</div></div></div>
+      <div class="info-row"><div class="info-icon"><svg class="ico" aria-hidden="true"><use href="#i-moto"></use></svg></div><div><div class="info-label">Delivery</div><div class="info-value">Delivery disponível</div></div></div>
     </div>
     <div class="info-block rev-r">
-  <h3>🕐 Horários <span id="status-loja"></span></h3>
+  <h3><svg class="ico ico-titulo" aria-hidden="true"><use href="#i-relogio"></use></svg> Horários <span id="status-loja"></span></h3>
   <table class="horarios-table">
     <tr data-day="1"><td>Segunda-feira</td><td>Fechado</td></tr>
     <tr data-day="2"><td>Terça-feira</td><td>19h às 23h</td></tr>
@@ -476,7 +490,7 @@
   </table>
       <p style="margin-top:1rem;font-size:.75rem;color:rgba(212,196,168,.3);letter-spacing:.05em;">As pessoas costumam ficar 1,5 a 4 horas. Reserve com antecedência!</p>
       <div style="margin-top:2rem;display:flex;flex-direction:column;gap:.75rem;">
-        <a href="#reserva" class="btn-primary" style="justify-content:center;">🍷 Fazer Reserva pelo WhatsApp</a>
+        <a href="#reserva" class="btn-primary" style="justify-content:center;"><svg class="ico" aria-hidden="true"><use href="#i-vinho"></use></svg> Fazer Reserva pelo WhatsApp</a>
       </div>
     </div>
   </div>
@@ -503,11 +517,11 @@
         <span class="rform-lgpd-txt">Concordo com o uso dos meus dados para fins de reserva, em conformidade com a LGPD.</span>
       </div>
     </div>
-    <button type="button" onclick="handleMangiareReserva()" class="rform-submit">🍷 Solicitar Reserva via WhatsApp</button>
+    <button type="button" onclick="handleMangiareReserva()" class="rform-submit"><svg class="ico" aria-hidden="true"><use href="#i-vinho"></use></svg> Solicitar Reserva via WhatsApp</button>
   </div>
   <div class="reserva-contacts">
     <div class="rcontact-item"><div class="rcontact-lbl">WhatsApp</div><div class="rcontact-val">(34) 99947-3287</div></div>
-    <div class="rcontact-item" onclick="openMngMap()" style="cursor:pointer" title="Ver no mapa"><div class="rcontact-lbl">📍 Endereço</div><div class="rcontact-val">Av. Santos Dumont, 932 · Uberaba MG</div></div>
+    <div class="rcontact-item" onclick="openMngMap()" style="cursor:pointer" title="Ver no mapa"><div class="rcontact-lbl"><svg class="ico" aria-hidden="true"><use href="#i-local"></use></svg> Endereço</div><div class="rcontact-val">Av. Santos Dumont, 932 · Uberaba MG</div></div>
     <div class="rcontact-item"><div class="rcontact-lbl">Horário</div><div class="rcontact-val">Ter a Dom · 19h às 23h</div></div>
   </div>
 </section>
@@ -732,8 +746,8 @@ setInterval(atualizarStatusLoja, 60000);
       <div class="mng-info-item"><div class="mng-info-lbl">Reservas</div><div class="mng-info-val">(34) 99947-3287<br>via WhatsApp</div></div>
     </div>
     <div class="mng-map-actions">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Av+Santos+Dumont+932+Uberaba+MG" target="_blank" rel="noopener" class="mng-map-btn-p">📍 Abrir no Google Maps</a>
-      <a href="#reserva" class="mng-map-btn-s" onclick="closeMngMap()">🍷 Fazer Reserva</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Av+Santos+Dumont+932+Uberaba+MG" target="_blank" rel="noopener" class="mng-map-btn-p"><svg class="ico" aria-hidden="true"><use href="#i-local"></use></svg> Abrir no Google Maps</a>
+      <a href="#reserva" class="mng-map-btn-s" onclick="closeMngMap()"><svg class="ico" aria-hidden="true"><use href="#i-vinho"></use></svg> Fazer Reserva</a>
     </div>
   </div>
 </div>

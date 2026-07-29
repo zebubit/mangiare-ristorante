@@ -516,6 +516,16 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 #back-top.show{opacity:1;transform:translateY(0);}
 #back-top:hover{background:var(--oro);color:var(--nero);border-color:var(--oro);}
 
+/* ---- ICONES DO SITE (sprite svg) ---- */
+.ico{width:1.05em;height:1.05em;flex-shrink:0;vertical-align:-.16em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.ico-preenchido{fill:currentColor;stroke:none;}
+.ico-titulo{width:1em;height:1em;vertical-align:-.1em;color:var(--oro);}
+.info-icon .ico{width:19px;height:19px;color:var(--oro);vertical-align:0;}
+.rcontact-lbl .ico{width:.9em;height:.9em;}
+/* nos botoes o texto e minusculo (11px), entao o icone precisa de escala propria */
+.btn-primary .ico,.btn-ghost .ico,.rform-submit .ico,.btn-pedir .ico,.btn-cardapio-completo .ico,.mng-map-btn-p .ico,.mng-map-btn-s .ico{width:1.5em;height:1.5em;vertical-align:-.42em;}
+.hero-badge .ico{width:1.3em;height:1.3em;vertical-align:-.3em;}
+
 /* ---- MUSICA AMBIENTE ---- */
 .music-btn{position:fixed;left:1.8rem;bottom:1.8rem;z-index:950;width:44px;height:44px;border-radius:50%;background:rgba(28,22,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--bordo-forte);color:var(--oro);display:grid;place-items:center;cursor:pointer;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s,background .3s,border-color .3s,color .3s;box-shadow:0 8px 24px rgba(0,0,0,.45);}
 .music-btn.visible{opacity:1;transform:translateY(0);}
