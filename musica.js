@@ -27,12 +27,19 @@
   }
 
   /* navegador bloqueia som automatico: entao comeca no primeiro toque/clique do visitante */
+  var EVENTOS = ['pointerdown','keydown','touchstart'];
   function armarPrimeiroToque(){
-    ['pointerdown','keydown','touchstart'].forEach(function(ev){
-      document.addEventListener(ev, function once(){
-        if(sessionStorage.getItem(KEY_ON) !== '0' && audio.paused) startPlay();
-      }, {once:true});
-    });
+    desarmarPrimeiroToque();
+    EVENTOS.forEach(function(ev){ document.addEventListener(ev, iniciarNoPrimeiroToque); });
+  }
+  function desarmarPrimeiroToque(){
+    EVENTOS.forEach(function(ev){ document.removeEventListener(ev, iniciarNoPrimeiroToque); });
+  }
+  function iniciarNoPrimeiroToque(e){
+    /* o proprio botao tem o tratamento dele: se entrar aqui, o clique acabaria pausando o que o toque ligou */
+    if(e.target && e.target.closest && e.target.closest('#musicBtn')) return;
+    desarmarPrimeiroToque();
+    if(sessionStorage.getItem(KEY_ON) !== '0' && audio.paused) startPlay();
   }
 
   btn.classList.add('visible');
