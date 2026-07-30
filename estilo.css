@@ -143,13 +143,13 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 
 /* Cada "Card" de prato */
 .carousel-slide {
-    flex: 0 0 350px;
+    flex: 0 0 300px;
     background: var(--carbone);
     border: 1px solid rgba(200, 151, 58, 0.2);
     border-radius: 12px;
     overflow: hidden;
     position: relative;
-    height: 450px;
+    height: 400px;
     display: block !important;
     opacity: 1 !important;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -208,8 +208,8 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 /* Ajuste para Mobile */
 @media (max-width: 768px) {
     .carousel-slide {
-        flex: 0 0 280px;
-        height: 400px;
+        flex: 0 0 250px;
+        height: 340px;
     }
     .carousel-btn {
         width: 40px;
@@ -308,8 +308,10 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .promo-card{background:var(--carbone);border:1px solid var(--bordo);position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
 .promo-card:hover{border-color:var(--bordo-forte);transform:translateY(-4px);}
 .promo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rosso),var(--oro));}
-/* Cartazes verticais: alinhar pelo topo, senão o recorte corta o título e o preço. */
-.promo-card-img{width:100%;height:550px;object-fit:cover;object-position:top;filter:brightness(.8) saturate(1.1);display:block;}
+/* Cartazes verticais: alinhar pelo topo, senão o recorte corta o título e o preço.
+   Altura contida de propósito: o menu completo já vem em texto logo abaixo,
+   a imagem só precisa mostrar a arte, o nome da promoção e o valor. */
+.promo-card-img{width:100%;height:400px;object-fit:cover;object-position:top;filter:brightness(.8) saturate(1.1);display:block;}
 .promo-card-body{padding:2.2rem;}
 .promo-card-dia{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:.5rem;}
 .promo-card-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--avorio);margin-bottom:.5rem;font-weight:300;}
@@ -559,7 +561,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
   /* Cartaz vertical (2:3): com altura automatica ficava alto demais no celular,
      empurrando o preco e a lista de pratos para fora da tela. Corta pelo topo,
      que e onde estao o titulo e o valor. O menu completo aparece no texto abaixo. */
-  .promo-card-img{height:340px;object-position:top;}
+  .promo-card-img{height:300px;object-position:top;}
   .reviews-grid{grid-template-columns:1fr;}
   .videos-grid{grid-template-columns:1fr 1fr;}
   .fab-lbl{display:none;}
