@@ -809,3 +809,12 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .btn-pedir{display:inline-block;background:var(--oro);color:var(--nero);padding:1rem 2.4rem;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background .3s;}
 .btn-pedir:hover{background:var(--oro-chiaro);}
 @media(max-width:900px){ .btn-pedir{min-height:44px;display:inline-flex;align-items:center;justify-content:center;} }
+
+/* ── Faixa de pratos (arte horizontal, largura total) ─────────────────────
+   Abre a seção do cardápio. Altura contida para não empurrar o menu para
+   baixo; no celular fica mais baixa ainda. */
+/* Arte inteira, sem recorte: o mosaico tem quatro pratos e o texto no centro,
+   cortar a altura destruiria a composicao. Por isso largura contida em vez de
+   faixa full-width. */
+.faixa-pratos{padding:0 5%;background:linear-gradient(180deg,rgba(10,8,5,0) 0%,rgba(200,151,58,.04) 50%,rgba(10,8,5,0) 100%);}
+.faixa-pratos img{display:block;width:100%;max-width:1000px;height:auto;margin:0 auto;border:1px solid var(--bordo);border-radius:10px;}
