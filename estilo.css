@@ -703,7 +703,14 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 
 /* ---- CARDAPIO: vitrine da home e subpagina ---- */
 .menu-cta{max-width:1200px;margin:2.2rem auto 0;text-align:center;}
-.btn-cardapio-completo{display:inline-block;border:1px solid var(--oro);color:var(--oro-chiaro);background:transparent;padding:1rem 2.6rem;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s;}
+/* Porta de entrada para o pedido: e o CTA mais importante da pagina, por isso
+   solido em vez de contorno. Era o elemento mais fraco da secao. */
+.btn-cardapio-completo{display:inline-flex;align-items:center;gap:.7rem;border:none;background:linear-gradient(135deg,var(--oro) 0%,var(--oro-chiaro) 100%);color:var(--nero);padding:1.2rem 3.2rem;font-family:'Jost',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-radius:6px;box-shadow:0 8px 26px rgba(200,151,58,.26);transition:transform .25s ease,box-shadow .25s ease;}
+.btn-cardapio-completo:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(200,151,58,.42);}
+.btn-cardapio-completo:active{transform:translateY(-1px);}
+@media (max-width:768px){
+  .btn-cardapio-completo{width:100%;justify-content:center;padding:1.15rem 1.5rem;}
+}
 .btn-cardapio-completo:hover{background:var(--oro);color:var(--nero);}
 .menu-cta-obs{margin-top:.9rem;color:rgba(212,196,168,.65);font-size:.72rem;letter-spacing:.05em;}
 .cardapio-topo{padding:110px 5% 2.4rem;text-align:center;border-bottom:1px solid var(--bordo);}
