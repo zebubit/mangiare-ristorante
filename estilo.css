@@ -311,7 +311,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 /* Cartazes verticais: alinhar pelo topo, senão o recorte corta o título e o preço.
    Altura contida de propósito: o menu completo já vem em texto logo abaixo,
    a imagem só precisa mostrar a arte, o nome da promoção e o valor. */
-.promo-card-img{width:100%;height:400px;object-fit:cover;object-position:top;filter:brightness(.8) saturate(1.1);display:block;}
+.promo-card-img{width:100%;height:250px;object-fit:cover;object-position:top;filter:brightness(.8) saturate(1.1);display:block;}
 .promo-card-body{padding:2.2rem;}
 .promo-card-dia{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:.5rem;}
 .promo-card-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--avorio);margin-bottom:.5rem;font-weight:300;}
@@ -561,7 +561,7 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
   /* Cartaz vertical (2:3): com altura automatica ficava alto demais no celular,
      empurrando o preco e a lista de pratos para fora da tela. Corta pelo topo,
      que e onde estao o titulo e o valor. O menu completo aparece no texto abaixo. */
-  .promo-card-img{height:300px;object-position:top;}
+  .promo-card-img{height:190px;object-position:top;}
   .reviews-grid{grid-template-columns:1fr;}
   .videos-grid{grid-template-columns:1fr 1fr;}
   .fab-lbl{display:none;}
@@ -818,3 +818,11 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
    faixa full-width. */
 .faixa-pratos{padding:0 5%;background:linear-gradient(180deg,rgba(10,8,5,0) 0%,rgba(200,151,58,.04) 50%,rgba(10,8,5,0) 100%);}
 .faixa-pratos img{display:block;width:100%;max-width:1000px;height:auto;margin:0 auto;border:1px solid var(--bordo);border-radius:10px;}
+
+/* ── Slides que são CARTAZ, não foto ──────────────────────────────────────
+   Cartaz tem texto e preço: precisa aparecer inteiro. Com o recorte que vale
+   para as fotos, o texto do cartaz era ampliado e cortado, e a legenda branca
+   do slide caía por cima do conteúdo. */
+.carousel-slide.cartaz img{object-fit:contain;background:#0a0805;}
+.carousel-slide.cartaz:hover img{transform:none;}          /* o zoom no hover cortaria o cartaz */
+.carousel-slide.cartaz .carousel-caption{background:linear-gradient(to top,rgba(10,8,5,.95) 0%,rgba(10,8,5,.75) 60%,transparent 100%);}
