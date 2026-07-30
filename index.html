@@ -174,6 +174,7 @@
   <div class="carousel-wrap" id="carouselWrap">
     <div class="carousel-slide"><img loading="lazy" src="JANTAR.webp" alt="Massa ao molho com filé e cogumelos, na chamada Jantar Romântico: o Mangiare é o cenário ideal"><div class="carousel-caption"><div class="carousel-caption-title">Jantar Romântico</div></div></div>
     <div class="carousel-slide"><img loading="lazy" src="CAMARAO1.webp" alt="Cartaz da Quarta do Camarão: Festival de Camarões do Chef, menu completo por 149 reais e 90 centavos por pessoa, toda quarta, com entrada, prato principal à escolha e sobremesa de cortesia"><div class="carousel-caption"><div class="carousel-caption-title">Festival de Camarões</div></div></div>
+    <div class="carousel-slide"><img loading="lazy" src="VENETO.webp" alt="Cartaz do Bacalhau a Veneto: lombos de bacalhau confitados no azeite com legumes salteados, alho dourado e risoto cremoso"><div class="carousel-caption"><div class="carousel-caption-title">Bacalhau a Veneto</div></div></div>
     <div class="carousel-slide"><img loading="lazy" src="CARNES.webp" alt="Bife grelhado acompanhado de massa ao molho branco, na chamada Carnes Selecionadas"><div class="carousel-caption"><div class="carousel-caption-title">Mio Mangiare</div></div></div>
     <div class="carousel-slide"><img loading="lazy" src="SABOR.webp" alt="Fettuccine com medalhão de filé, na chamada Sabor da Itália: experiência única"><div class="carousel-caption"><div class="carousel-caption-title">Saborear Momentos</div></div></div>
     <div class="carousel-slide"><img loading="lazy" src="CELEBRE.webp" alt="Taça de vinho tinto sendo servida, na chamada Celebre Momentos: a harmonia perfeita entre pratos e vinhos"><div class="carousel-caption"><div class="carousel-caption-title">Celebre Momentos</div></div></div>
@@ -199,12 +200,7 @@
 
   <div class="carousel-controls">
     <button class="carousel-btn" id="cPrev">&#8249;</button>
-    <div class="carousel-dots">
-      <button class="cdot active"></button><button class="cdot"></button><button class="cdot"></button><button class="cdot"></button><button class="cdot"></button>
-      <button class="cdot"></button><button class="cdot"></button><button class="cdot"></button><button class="cdot"></button><button class="cdot"></button>
-      <button class="cdot"></button><button class="cdot"></button><button class="cdot"></button><button class="cdot"></button><button class="cdot"></button>
-      <button class="cdot"></button><button class="cdot"></button><button class="cdot"></button>
-    </div>
+    <div class="carousel-dots" id="carouselDots"><!-- as bolinhas sao criadas pelo JS, uma por slide --></div>
     <button class="carousel-btn" id="cNext">&#8250;</button>
   </div>
 </section>
@@ -637,6 +633,16 @@ window.addEventListener('load', () => {
     // 3. CARROSSEL COM AUTO-PLAY (AUTOMÁTICO)
     const wrap = document.getElementById('carouselWrap');
     const slides = document.querySelectorAll('.carousel-slide');
+    // Uma bolinha por slide, criadas aqui. Antes eram 18 fixas no HTML para 21
+    // slides, então os últimos nunca marcavam. Assim nunca sai de sincronia
+    // quando um cartaz novo entra no carrossel.
+    const dotsBox = document.getElementById('carouselDots');
+    if (dotsBox && slides.length) {
+      // o nome acessivel de cada bolinha e definido mais abaixo, a partir da legenda do slide
+      dotsBox.innerHTML = Array.from(slides, (_, i) =>
+        '<button class="cdot' + (i === 0 ? ' active' : '') + '"></button>'
+      ).join('');
+    }
     const dots = document.querySelectorAll('.cdot');
     const btnNext = document.getElementById('cNext');
     const btnPrev = document.getElementById('cPrev');
