@@ -308,7 +308,8 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .promo-card{background:var(--carbone);border:1px solid var(--bordo);position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
 .promo-card:hover{border-color:var(--bordo-forte);transform:translateY(-4px);}
 .promo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rosso),var(--oro));}
-.promo-card-img{width:100%;height:550px;object-fit:cover;object-position:center;filter:brightness(.8) saturate(1.1);display:block;}
+/* Cartazes verticais: alinhar pelo topo, senão o recorte corta o título e o preço. */
+.promo-card-img{width:100%;height:550px;object-fit:cover;object-position:top;filter:brightness(.8) saturate(1.1);display:block;}
 .promo-card-body{padding:2.2rem;}
 .promo-card-dia{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:.5rem;}
 .promo-card-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--avorio);margin-bottom:.5rem;font-weight:300;}
